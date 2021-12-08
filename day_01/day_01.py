@@ -6,12 +6,10 @@ with open('day_01_input.txt', encoding='utf-8') as f:
 
 def count_increase(data) -> int:
     increased = 0
-    previous_value = 0
+    previous_value = data[0]
+
     for i in range(len(data)):
-        if previous_value == 0:
-            previous_value = data[i]
-            continue
-        elif data[i] > previous_value:
+        if data[i] > previous_value:
             increased += 1
         previous_value = data[i]
     return increased
